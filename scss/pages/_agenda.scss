@@ -1,0 +1,245 @@
+.bs-agenda {
+  border: 4px solid $color-blue-light;
+  word-break: break-word;
+
+  h3 > a {
+    color: inherit;
+  }
+
+  &__front {
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: $color-blue-light;
+
+      * {
+        color: #f7f7f7;
+      }
+
+      @include respond-large {
+        flex-direction: row;
+      }
+
+      &__text {
+        font-size: .8rem;
+      }
+
+    }
+
+
+    &__text {
+      border: 1px solid;
+      font-size: .8rem;
+
+      &-inner {
+        background-color: #fefff0;
+        padding: .5rem;
+
+        @include respond-large {
+          padding: 2rem;
+          columns: 2;
+          column-gap: 4rem;
+          column-rule: 1px solid lightgrey;
+        }
+
+      }
+    }
+
+    &__heading {
+      @include heading;
+
+      > h4 {
+        margin: 0;
+        padding: .75rem 0;
+        font-size: 1.1rem;
+      }
+    }
+
+    &__list {
+      list-style: none;
+      padding: 4px 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    &__info {
+      border: 0;
+    }
+
+    &__item {
+      flex: 0 0 33.3333%;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      padding-top: 2px;
+
+      a {
+        color: inherit;
+      }
+
+      &-date,
+      &-city,
+      &-venue,
+      &-artist {
+        // text-transform: uppercase;
+        @include heading;
+      }
+    }
+
+    &__city {
+      @include heading;
+      word-spacing: -.25rem;
+    }
+
+    &__venue {
+      font-variant: small-caps;
+
+      > a {
+        color: inherit;
+      }
+    }
+
+    &__play {
+
+    }
+
+}
+
+.bs-agenda-single {
+
+  &__text {
+    background-color: $color-blue-light;
+    padding: 1rem .5rem 3rem;
+
+    * {
+      color: #f7f7f7;
+    }
+
+    .bs-sidebar__heading {
+      margin-top: 2rem;
+      color: #f7f7f7;
+
+      span {
+        background-color: $color-blue-light;
+      }
+    }
+
+    .gigpress-calendar-links-inner {
+      color: $color-black;
+
+      span a {
+        color: $color-black;
+      }
+    }
+
+    .bs-agenda__list {
+      border-bottom: 0;
+    }
+
+    &-inner {
+
+      @include respond-large {
+        padding: 2rem;
+        columns: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid;
+      }
+    }
+  }
+
+  h3 {
+    padding: 1rem;
+  }
+}
+
+// .bs-agenda {
+//   border: 4px solid $color-blue-light;
+//
+//
+//
+//   &__text {
+//     border: 1px solid;
+//     font-size: .8rem;
+//
+//     &-inner {
+//       background-color: #fefff0;
+//
+//       @include respond-large {
+//         padding: 2rem;
+//         columns: 2;
+//         column-gap: 4rem;
+//         column-rule: 1px solid lightgrey;
+//       }
+//     }
+//
+//     // ul {
+//     //   list-style: none;
+//     //   margin: 0;
+//     //   padding: 0;
+//     //   display: flex;
+//     //   // justify-content: space-around;
+//     //
+//     //   > li {
+//     //
+//     //   }
+//     // }
+//
+//     &__list {
+//       list-style: none;
+//       padding: 0;
+//       margin: 0;
+//       display: flex;
+//       justify-content: space-around;
+//       border-top: 1px solid;
+//       border-bottom: 1px solid;
+//     }
+//
+//     &__item {
+//       color: $color-black;
+//     }
+//   }
+//
+//    a {
+//     color: inherit;
+//   }
+//
+//   &__header {
+//     @include heading;
+//   }
+//
+//   &__heading {
+//     @include heading;
+//     background-color: inherit;
+//     font-size: 1rem;
+//
+//     > a {
+//       color: inherit;
+//     }
+//   }
+//
+//   &__play {
+//
+//   }
+//
+//   &__row {
+//     font-size: .9rem;
+//   }
+//
+//   &__artist,
+//   &__venue {
+//     font-variant: small-caps;
+//     line-height: 1.25;
+//
+//   }
+//
+//   &__city {
+//     text-transform: uppercase;
+//   }
+//
+//   &__info {
+//
+//   }
+//
+// }

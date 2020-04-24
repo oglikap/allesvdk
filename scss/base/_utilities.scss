@@ -1,0 +1,52 @@
+.bs-text-small {
+  font-size: 80%;
+  display: inline-block;
+}
+
+.bs-heading {
+  font-size: 1.125rem;
+  @include heading;
+  margin-bottom: .5rem;
+  line-height: 1;
+
+  @include respond-medium {
+    font-size: 1.25rem;
+  }
+
+  &--xsmall {
+    font-size: .9rem;
+    word-spacing: -.25rem;
+    font-weight: 700;
+  }
+
+  &--small {
+    font-size: 1rem;
+  }
+
+  &--large {
+    font-size: 1.75rem;
+    letter-spacing: -1px;
+  }
+
+  &--xlarge {
+    font-size: 2.25rem;
+  }
+
+  &--xxlarge {
+    font-size: 1.75rem;
+
+    @include respond-medium {
+      font-size: 2.75rem;
+      word-spacing: -1rem;
+    }
+  }
+}
+
+.bs-link {
+  color: inherit !important;
+}
+
+.bs-color-red { background-color: $color-red; }
+.bs-color-blue { background-color: $color-blue-light; }
+.bs-color-purple { background-color: $color-purple !important; }
+.bs-color-pinkred { background-color: $color-pink-red !important; }

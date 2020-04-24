@@ -1,0 +1,81 @@
+.bs-slider {
+  position: relative;
+
+  &__item {
+  }
+
+  &__photo {
+    filter: grayscale(.35);
+  }
+
+  &__overlay {
+    padding: 1rem;
+    background-color: rgba($color-blue-light, .7);
+    width: 75%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    word-break: break-word;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: .5rem;
+
+    border: 3px solid rgba(#fff, 1);
+
+    @include respond-medium {
+      padding: 2rem;
+      margin: .75rem;
+    }
+
+    @include respond-large {
+      width: 25%;
+    }
+  }
+
+  &__heading {
+    word-spacing: -1rem;
+    letter-spacing: -1px;
+
+    * {
+      @include heading;
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    margin: 0;
+    word-spacing: -.25rem;
+
+    @include respond-medium {
+      font-size: 2.75rem;
+      word-spacing: -.75rem;
+    }
+  }
+
+  &__maker {
+    font-weight: 700;
+    font-size: .85rem;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+
+    @include respond-medium {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__excerpt {
+    display: block;
+    font-size: .75rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #fff;
+
+    @include respond-medium {
+      font-size: .9rem;
+    }
+  }
+
+
+}

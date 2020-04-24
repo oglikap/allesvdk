@@ -1,0 +1,52 @@
+// MEDIA QUERY MANAGER
+
+/*
+0 - 639px: default
+640px - 959px: medium
+960px - 1199px: large
+1200px - 1599px: xlarge
+1600px - ~ : xxlarge
+*/
+
+@mixin respond-medium {
+  @media (min-width: 640px) { @content };
+}
+@mixin respond-large {
+  @media (min-width: 960px) { @content };
+}
+@mixin respond-xlarge {
+  @media (min-width: 1200px) { @content };
+}
+@mixin respond-tiles {
+  @media (min-width: 1294px) { @content };
+}
+@mixin respond-xxlarge {
+  @media (min-width: 1440px) { @content };
+}
+@mixin respond-xxxlarge {
+  @media (min-width: 1600px) { @content };
+}
+
+
+@mixin heading {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  word-spacing: -.5rem;
+  line-height: 1;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hover {
+  text-decoration: none;
+  transform: rotate(-1deg) scale(1.05);
+}
+
+@mixin photo {
+  background-position: center;
+  background-size: cover;
+}

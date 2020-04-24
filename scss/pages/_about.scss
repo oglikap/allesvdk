@@ -1,0 +1,61 @@
+.bs-about {
+  border: 4px solid $color-blue-light;
+  font-size: .9rem;
+
+  &__front {
+    display: flex;
+    flex-direction: column-reverse;
+
+    * {
+      color: #f7f7f7;
+    }
+
+    @include respond-large {
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    background-color: $color-blue-light;
+    flex: 0 0 40%;
+
+     &-inner {
+       padding: 1rem 1rem 3rem 1rem;
+
+       @include respond-medium {
+         padding: 1rem 3rem 4rem 3rem;
+       }
+     }
+
+     ul {
+       list-style: none;
+       margin: 0;
+       padding: 0;
+
+       > li {
+
+         &::before {
+           content: ' > ';
+           color: yellow;
+         }
+
+       }
+     }
+  }
+
+  &__photo {
+    @include photo;
+    background-position: top;
+    min-height: 22.5rem;
+    flex: 1;
+    filter: grayscale(.35);
+  }
+
+  &__tiles {
+    padding: 1rem;
+
+    @include respond-medium {
+      padding: 3rem 2rem;
+    }
+  }
+}

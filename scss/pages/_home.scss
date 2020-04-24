@@ -1,0 +1,16 @@
+.bs-home {
+  border: 6px solid $color-blue-light;
+
+  &__playing {
+    padding: 1rem;
+
+    @include respond-medium {
+      padding: 1.5rem;
+    }
+
+    @include respond-large {
+      padding: 3rem;
+    }
+  }
+
+}

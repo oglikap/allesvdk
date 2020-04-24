@@ -1,0 +1,23 @@
+.bs-search {
+
+  &__input {
+    @include heading;
+  }
+
+  &__icon {
+    fill: $color-red;
+    stroke: $color-red
+  }
+  // display: inline-block;
+  // position: relative;
+  // z-index: 0;
+  //
+  // &__input {
+  //   border-radius: 50%;
+  //   position: absolute;
+  //   left: 50%;
+  //   z-index: 1;
+  // }
+
+
+}

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'AvenirNextLTPro-Medium';
+  src: url('../fonts/2FDF27_8_0.woff2') format('woff2'), url('../fonts/2FDF27_8_0.woff') format('woff'), url('../fonts/2FDF27_8_0.ttf') format('truetype');
+}
+
+body {
+  font-family: 'AvenirNextLTPro-Medium', serif;
+}
+
+em {
+  color: inherit;
+}
+
+ h1, h2, h3, h4, h5, h6 {
+   @include heading;
+ }

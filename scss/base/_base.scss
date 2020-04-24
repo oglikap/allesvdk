@@ -1,0 +1,21 @@
+html,
+body {
+  font-size: .85rem;
+
+  @include respond-medium {
+    font-size: 1rem;
+  }
+}
+
+body {
+  background-color: #f7f7f7;
+
+  @include respond-medium {
+    padding: 0 1.5rem;
+  }
+}
+
+.bs-wrapper {
+  background-color: #fff;
+
+}

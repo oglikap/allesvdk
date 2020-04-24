@@ -1,0 +1,185 @@
+.bs-tiles {
+  font-size: .95rem;
+  border: 1px solid;
+  border-bottom: 0;
+
+  &:last-of-type {
+    border-bottom: 1px solid;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+
+    &:nth-of-type(6n+1) {
+      background-color: $color-black;
+      * {
+        color: #f7f7f7;
+      }
+    }
+
+    &:nth-of-type(6n+2) {
+      background-color: #d41800;
+      background-color: #f7f7f7;
+      * {
+        color: $color-black;
+      }
+    }
+
+    &:nth-of-type(6n+3) {
+      background-color: #d41800;
+
+      * {
+        color: #f7f7f7;
+      }
+    }
+
+    &:nth-of-type(6n+4) {
+      background-color: #a8a9ad;
+
+      * {
+        color: #f7f7f7;
+      }
+    }
+
+    &:nth-of-type(6n+5) {
+      background-color: $color-purple;
+      * {
+        color: #f7f7f7;
+      }
+    }
+
+    &:nth-of-type(6n+6) {
+      background-color: $color-black;
+      background-color: #d400bc;
+
+      * {
+        color: #f7f7f7;
+      }
+    }
+
+    @include respond-medium {
+      flex-direction: row;
+
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include respond-xlarge {
+
+      &:nth-of-type(even) {
+        flex-direction: row;
+      }
+
+      &:nth-of-type(4n+1),
+      &:nth-of-type(4n+2) {
+        flex-direction: row-reverse;
+      }
+
+    }
+  }
+
+  &__text {
+    font-size: .85rem;
+    line-height: 1.25;
+
+    @include respond-medium {
+      flex: 0 0 50%;
+    }
+
+    &-inner {
+      padding: 2rem;
+    }
+  }
+
+  &__header {
+    @include heading;
+  }
+
+  &__title {
+    @include heading;
+    font-size: 1.25rem;
+
+    > a {
+      color: inherit;
+      display: inline-block;
+      transition: all .2s;
+
+      &:hover {
+        @include hover;;
+      }
+    }
+  }
+
+  &__subtitle {
+    word-spacing: -.25rem;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  &__tag-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+
+  &__tag-item {
+    color: #f7f7f7;
+    background-color: $color-purple;
+    @include heading;
+    font-size: .75rem;
+    padding: 1px 2px;
+    font-weight: 700;
+    word-spacing: -.25rem;
+    margin-right: .25rem;
+
+    @include respond-medium {
+      font-size: .9rem;
+      padding: 2px 4xp;
+    }
+
+    &:nth-of-type(6n+1) {
+      background-color: $color-red;
+    }
+
+    &:nth-of-type(6n+2) {
+      background-color: $color-black;
+    }
+
+    > a {
+      color: inherit;
+    }
+  }
+
+  &__button {
+    @include heading;
+    display: inline-block;
+    border: 2px solid;
+    padding: 4px 8px;
+    color: inherit;
+    margin-top: .5rem;
+    transition: all .2s;
+
+    @include respond-medium {
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      color: inherit;
+      @include hover;
+    }
+  }
+
+  &__photo {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    min-height: 18.75rem;
+    background-image: url(../img/Dictatoresses.jpg);
+    background-color: white;
+  }
+
+}

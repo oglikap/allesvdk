@@ -1,0 +1,91 @@
+.bs-single {
+
+  &__heading {
+    @include heading;
+    font-size: 1.75rem;
+
+    &--large {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__maker {
+    font-weight: 700;
+    opacity: .9;
+    margin: 0;
+  }
+
+  &__front {
+    background-color: $color-blue-light;
+    border: 4px solid $color-blue-light;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include respond-xlarge {
+      flex-direction: row;
+    }
+
+    * {
+      color: #f7f7f7;
+    }
+
+
+    &-text {
+
+      &-inner {
+        padding: 1.5rem;
+
+        @include respond-medium {
+          padding: 3rem;
+        }
+      }
+
+      @include respond-medium {
+        flex: 0 0 30%;
+      }
+    }
+
+    &-short-text {
+      padding: 1rem 0;
+      font-size: 1rem;
+      letter-spacing: -1px;
+
+      @include respond-medium {
+        font-size: 1.125rem;
+      }
+    }
+
+    &-photo {
+      min-height: 20rem;
+      @include photo;
+      filter: grayscale(40%);
+
+      @include respond-medium {
+        min-height: 30rem;
+        flex: 1;
+      }
+    }
+
+    &-video {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      width: 100%;
+
+      @include respond-tiles {
+        padding-bottom: 40%;
+      }
+
+      iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    }
+
+  }
+
+}
