@@ -19,8 +19,13 @@
         flex-direction: row;
       }
 
-      &__text {
+      &-text {
         font-size: .8rem;
+        flex: 0 0 45%;
+
+        &-inner {
+          padding: 4rem;
+        }
       }
 
     }
@@ -105,13 +110,20 @@
 
     }
 
+    strong.gigpress-cancelled, strong.gigpress-soldout {
+      background-color: $color-red;
+    }
+
 }
 
 .bs-agenda-single {
+  outline: 1px solid #f7f7f7;
+  outline-offset: -4px;
 
   &__text {
     background-color: $color-blue-light;
-    padding: 1rem .5rem 3rem;
+    padding: 3rem 6rem;
+    font-size: .85rem;
 
     * {
       color: #f7f7f7;
@@ -145,101 +157,8 @@
         columns: 2;
         column-gap: 4rem;
         column-rule: 1px solid;
+        column-fill: balance;
       }
     }
   }
-
-  h3 {
-    padding: 1rem;
-  }
 }
-
-// .bs-agenda {
-//   border: 4px solid $color-blue-light;
-//
-//
-//
-//   &__text {
-//     border: 1px solid;
-//     font-size: .8rem;
-//
-//     &-inner {
-//       background-color: #fefff0;
-//
-//       @include respond-large {
-//         padding: 2rem;
-//         columns: 2;
-//         column-gap: 4rem;
-//         column-rule: 1px solid lightgrey;
-//       }
-//     }
-//
-//     // ul {
-//     //   list-style: none;
-//     //   margin: 0;
-//     //   padding: 0;
-//     //   display: flex;
-//     //   // justify-content: space-around;
-//     //
-//     //   > li {
-//     //
-//     //   }
-//     // }
-//
-//     &__list {
-//       list-style: none;
-//       padding: 0;
-//       margin: 0;
-//       display: flex;
-//       justify-content: space-around;
-//       border-top: 1px solid;
-//       border-bottom: 1px solid;
-//     }
-//
-//     &__item {
-//       color: $color-black;
-//     }
-//   }
-//
-//    a {
-//     color: inherit;
-//   }
-//
-//   &__header {
-//     @include heading;
-//   }
-//
-//   &__heading {
-//     @include heading;
-//     background-color: inherit;
-//     font-size: 1rem;
-//
-//     > a {
-//       color: inherit;
-//     }
-//   }
-//
-//   &__play {
-//
-//   }
-//
-//   &__row {
-//     font-size: .9rem;
-//   }
-//
-//   &__artist,
-//   &__venue {
-//     font-variant: small-caps;
-//     line-height: 1.25;
-//
-//   }
-//
-//   &__city {
-//     text-transform: uppercase;
-//   }
-//
-//   &__info {
-//
-//   }
-//
-// }

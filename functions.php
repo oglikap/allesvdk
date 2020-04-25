@@ -146,6 +146,7 @@ function allesvdk_theme_scripts() {
 	wp_enqueue_style( 'uikit-css', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/css/uikit.min.css' );
 	wp_enqueue_style( 'roboto_mono', 'https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap' );
 	wp_enqueue_style( 'custom_css', get_template_directory_uri() . '/css/custom.css' );
+	wp_enqueue_script( 'totop_js', get_template_directory_uri() . '/js/totop.js', array(), 1.1, true);
 	wp_enqueue_script( 'uikit_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/js/uikit.min.js', array( 'jquery' ), true );
 	wp_enqueue_script( 'uikit_icons_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/js/uikit-icons.min.js' );
 
