@@ -11,52 +11,7 @@
     display: flex;
     flex-direction: column-reverse;
 
-    &:nth-of-type(6n+1) {
-      background-color: $color-black;
-      * {
-        color: #f7f7f7;
-      }
-    }
-
-    &:nth-of-type(6n+2) {
-      background-color: #d41800;
-      background-color: #f7f7f7;
-      * {
-        color: $color-black;
-      }
-    }
-
-    &:nth-of-type(6n+3) {
-      background-color: #d41800;
-
-      * {
-        color: #f7f7f7;
-      }
-    }
-
-    &:nth-of-type(6n+4) {
-      background-color: #a8a9ad;
-
-      * {
-        color: #f7f7f7;
-      }
-    }
-
-    &:nth-of-type(6n+5) {
-      background-color: $color-purple;
-      * {
-        color: #f7f7f7;
-      }
-    }
-
-    &:nth-of-type(6n+6) {
-      background-color: $color-black;
-      background-color: #d400bc;
-
-      * {
-        color: #f7f7f7;
-      }
-    }
+    @include tiles-bg;
 
     @include respond-medium {
       flex-direction: row;
@@ -77,6 +32,39 @@
         flex-direction: row-reverse;
       }
 
+      &:nth-of-type(4n+1) {
+        border-top: 4px solid #fff;
+        border-left: 4px solid #fff;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+      }
+
+      &:nth-of-type(4n+2) {
+        border-top: 4px solid #fff;
+        border-right: 4px solid #fff;
+        border-bottom: 2px solid #fff;
+        border-left: 2px solid #fff;
+      }
+
+      &:nth-of-type(4n+3) {
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        // border-bottom: 1px solid #fff;
+        border-left: 4px solid #fff;
+      }
+
+      &:nth-of-type(4n+4) {
+        border-top: 2px solid #fff;
+        border-right: 4px solid #fff;
+        // border-bottom: 1px solid #fff;
+        border-left: 2px solid #fff;
+      }
+
+      &:last-of-type,
+      &:nth-last-of-type(2) {
+        border-bottom: 2px solid #fff;
+      }
+
     }
   }
 
@@ -89,7 +77,20 @@
     }
 
     &-inner {
-      padding: 2rem;
+      padding: 1.5rem;
+
+      @include respond-medium {
+        padding: 1.5rem 1.5rem 0 1.5rem;
+      }
+
+      h4, a {
+        color: inherit;
+      }
+
+      a:hover {
+        color: inherit;
+        text-decoration: none;
+      }
     }
   }
 
@@ -99,7 +100,10 @@
 
   &__title {
     @include heading;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0 0 .25rem 0;
+    color: inherit;
 
     > a {
       color: inherit;
@@ -114,6 +118,8 @@
 
   &__subtitle {
     word-spacing: -.25rem;
+    // background-color: $color-blue-light;
+    display: inline-block;
   }
 
   &__link {
@@ -122,35 +128,30 @@
 
   &__tag-list {
     list-style: none;
-    padding: 0;
+    padding: .5rem 0;
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__tag-item {
-    color: #f7f7f7;
-    background-color: $color-purple;
+    background-color: rgba($color-blue-light, .85);
     @include heading;
     font-size: .75rem;
-    padding: 1px 2px;
+    padding: 2px;
     font-weight: 700;
     word-spacing: -.25rem;
-    margin-right: .25rem;
+    // border: 1px solid lightgrey;
+    margin: 2px 6px 4px 0;
+
+    flex: 0 0 46%;
 
     @include respond-medium {
-      font-size: .9rem;
-      padding: 2px 4xp;
-    }
-
-    &:nth-of-type(6n+1) {
-      background-color: $color-red;
-    }
-
-    &:nth-of-type(6n+2) {
-      background-color: $color-black;
+      // font-size: .8rem;
+      padding: 2px 4px;
     }
 
     > a {
-      color: inherit;
+      // color: $color-black !important;
     }
   }
 
@@ -158,9 +159,8 @@
     @include heading;
     display: inline-block;
     border: 2px solid;
-    padding: 4px 8px;
+    padding: 4px;
     color: inherit;
-    margin-top: .5rem;
     transition: all .2s;
 
     @include respond-medium {
@@ -178,8 +178,47 @@
     background-size: cover;
     background-position: center;
     min-height: 18.75rem;
-    background-image: url(../img/Dictatoresses.jpg);
+    background-image: url(../img/fallback.jpg);
     background-color: white;
+
+    &--fallback {
+
+    }
+  }
+
+  &__footer {
+    margin-top: 1rem;
+    font-size: .85rem;
+    @include heading;
+    text-transform: none;
+    font-variant: all-small-caps;
+    word-spacing: -4px;
+
+    &-list {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+
+      > li {
+        padding: 3px;
+        margin: 4px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        opacity: .9;
+
+        @include tiles-tags-bg;
+
+        > a {
+          color: inherit;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+    }
   }
 
 }

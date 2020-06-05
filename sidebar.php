@@ -10,7 +10,6 @@
 <div class="bs-widgets">
 	<div class="bs-widgets__item">
 		<?php $args = array(
-			'post_type' => 'post',
 			'category_name' => 'producties',
 			'posts_per_page' => 4
 		);
@@ -29,7 +28,7 @@
 							<div class="bs-sidebar__item">
 
 								<div class="bs-sidebar__card">
-									<a href="<?php the_permalink(); ?>" class="bs-sidebar__link" style="background-image: url(<?php echo the_post_thumbnail_url('medium_large'); ?>)">
+									<a href="<?php the_permalink(); ?>" class="bs-sidebar__link" <?php if( has_post_thumbnail() ): ?> style="background-image: url(<?php the_post_thumbnail_url('square_large'); ?>)"<?php endif; ?>)>"
 									</a>
 									<div class="bs-sidebar__card-footer">
 										<span class="bs-sidebar__card-title">
@@ -43,46 +42,11 @@
 						</div>
 
 					<?php	} // ENDWHILE ?>
-					</div>
-
 				</div>
 
-			<?php } wp_reset_postdata(); // ENDIF ?>
+			</div>
 
-			<?php
-			if ( ! is_active_sidebar( 'sidebar-2' ) ) {
-				return;
-			}
-			?>
+		<?php } wp_reset_postdata(); // ENDIF ?>
 
-			<aside id="secondary" class="widget-area bs-widget">
-				<?php dynamic_sidebar( 'sidebar-2' ); ?>
-			</aside><!-- #secondary -->
-		</div>
-
-		<div class="bs-widgets uk-padding-remove">
-
-			<?php
-			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-				return;
-			}
-			?>
-
-			<aside id="secondary" class="widget-area bs-sidebar">
-				<?php dynamic_sidebar( 'sidebar-1' ); ?>
-			</aside><!-- #secondary -->
-
-			<?php
-			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-				return;
-			}
-			?>
-
-			<aside id="secondary" class="widget-area bs-widget">
-				<?php dynamic_sidebar( 'sidebar-3' ); ?>
-			</aside><!-- #secondary -->
-
-		</div>
-
-	<!-- </div> -->
+	</div>
 </div>

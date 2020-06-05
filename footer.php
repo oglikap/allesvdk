@@ -46,6 +46,9 @@
 						<a href="https://www.facebook.com/allesvoordekunsten/" uk-icon="icon: facebook; ratio: 1.5"></a>
 					</li>
 					<li class="bs-social__item">
+						<a href="https://www.instagram.com/allesvoordekunsten/" uk-icon="icon: instagram; ratio: 1.5"></a>
+					</li>
+					<li class="bs-social__item">
 						<a href="mailto:info@allesvoordekunsten.nl" uk-icon="icon: mail; ratio: 1.5"></a>
 					</li>
 				</ul>

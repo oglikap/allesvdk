@@ -9,7 +9,7 @@
     if( is_category() ) {
       single_cat_title( '<h1 class="page-title bs-heading bs-heading--large">', '</h1>' );
     } elseif ( is_front_page() ) {
-      echo '<h2 class="bs-heading">On tour</h2>';
+      echo '<h2 class="bs-heading">' . get_bloginfo('name') . '</h2>';
     } elseif( is_page() ) {
       the_title('<h2 class="page-title bs-heading bs-heading--large">', '</h2>');
     } elseif( is_tag() ) {
@@ -21,13 +21,6 @@
     ?>
   </div>
 
-  <nav class="bs-navi bs-navi--cat">
-    <?php wp_nav_menu( array(
-      'theme_location' => 'menu-2',
-      'menu_id'        => 'category-menu',
-      'container'			 => '',
-      'menu_class'		 => 'bs-navi__list'
-    ) ); ?>
-  </nav>
+<?php naviCat(); ?>
 
 </header><!-- .page-header -->

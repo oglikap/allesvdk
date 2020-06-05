@@ -50,3 +50,63 @@
   background-position: center;
   background-size: cover;
 }
+
+@mixin tiles-bg {
+  &:nth-of-type(6n+1) {
+    background-color: $color-black;
+    color: #f7f7f7;
+  }
+
+  &:nth-of-type(6n+2) {
+    background-color: #f7f7f7;
+    color: $color-black;
+  }
+
+  &:nth-of-type(6n+3) {
+    background-color: #d41800;
+    color: #f7f7f7;
+  }
+
+  &:nth-of-type(6n+4) {
+    background-color: #a8a9ad;
+    color: #ffffe9;
+    // color: #f7f7f7;
+  }
+
+  &:nth-of-type(6n+5) {
+    background-color: $color-purple;
+    * {
+      color: #f7f7f7;
+    }
+  }
+
+  &:nth-of-type(6n+6) {
+    background-color: #d400bc;
+
+    * {
+      color: #f7f7f7;
+    }
+  }
+}
+
+@mixin tiles-tags-bg {
+  &:nth-of-type(4n+1) {
+    background-color: #363538;
+    color: #f7f7f7;
+  }
+
+  &:nth-of-type(4n+2) {
+    background-color: #8d8c8a;
+  }
+
+  &:nth-of-type(4n+3) {
+    background-color: #408697;
+    color: #f7f7f7;
+  }
+
+  &:nth-of-type(4n+4) {
+    background-color: #52d6f4;
+    color: #000;
+  }
+
+}

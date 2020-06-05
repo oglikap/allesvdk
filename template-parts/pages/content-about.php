@@ -22,7 +22,7 @@
   <div class="bs-about__tiles">
 
     <?php get_template_part( 'template-parts/pages/content', 'header' ); ?>
-    
+
     <div class="bs-tiles">
 
       <?php $args = array(
@@ -48,6 +48,7 @@
                   </div>
                   <div class="bs-tiles__excerpt">
                     <?php the_excerpt(); ?>
+                      <a class="bs-tiles__button" href="<?php the_permalink(); ?>">Lees verder</a>
                   </div>
                 </div>
               </div>

@@ -2,14 +2,14 @@
   border: 6px solid $color-blue-light;
 
   &__playing {
-    padding: 1rem;
+    padding: .5rem;
 
     @include respond-medium {
-      padding: 1.5rem;
+      padding: 1.5rem .5rem;
     }
 
     @include respond-large {
-      padding: 3rem;
+      padding: 3rem 1rem;
     }
   }
 

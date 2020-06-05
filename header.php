@@ -53,8 +53,13 @@
 						<a href="https://www.facebook.com/allesvoordekunsten/" uk-icon="icon: facebook"></a>
 					</li>
 					<li class="bs-navi__item">
+						<a href="https://www.instagram.com/allesvoordekunsten/" uk-icon="icon: instagram"></a>
+					</li>
+					<li class="bs-navi__item">
 						<a href="mailto:info@allesvoordekunsten.nl" uk-icon="icon: mail"></a>
 					</li>
+
+					<!-- SEARCHFORM -->
 					<li class="bs-navi__item">
 						<div class="bs-navi__search">
 							<?php get_search_form(); ?>

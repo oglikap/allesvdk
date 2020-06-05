@@ -9,7 +9,6 @@
 
 ?>
   <nav class="bs-navi bs-navi--cat">
-
     <?php
     wp_nav_menu( array(
       'theme_location' => 'menu-2',
@@ -18,7 +17,6 @@
       'menu_class'		 => 'bs-navi__list'
     ) );
      ?>
-
   </nav>
 
 
@@ -55,23 +53,28 @@
 
         	<div class="entry-content">
         		<?php
-        		the_excerpt( sprintf(
-        			wp_kses(
-        				/* translators: %s: Name of current post. Only visible to screen readers */
-        				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'allesvdk-theme' ),
-        				array(
-        					'span' => array(
-        						'class' => array(),
-        					),
-        				)
-        			),
-        			get_the_title()
-        		) );
+            if( get_field('short_text') ) {
+              the_field('short_text');
+            } else {
+              the_excerpt( sprintf(
+          			wp_kses(
+          				/* translators: %s: Name of current post. Only visible to screen readers */
+          				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'allesvdk-theme' ),
+          				array(
+          					'span' => array(
+          						'class' => array(),
+          					),
+          				)
+          			),
+          			get_the_title()
+          		) );
 
-        		wp_link_pages( array(
-        			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'allesvdk-theme' ),
-        			'after'  => '</div>',
-        		) );
+          		wp_link_pages( array(
+          			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'allesvdk-theme' ),
+          			'after'  => '</div>',
+          		) );
+            }
+
         		?>
         	</div><!-- .entry-content -->
 

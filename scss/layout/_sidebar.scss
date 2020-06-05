@@ -64,7 +64,8 @@
     height: 12.5rem;
     @include photo;
     transition: all .2s ease-in;
-
+    background-image: url(../img/fallback.jpg);
+    
     &:hover {
       opacity: .7;
     }

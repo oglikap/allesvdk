@@ -7,6 +7,37 @@
  * @package AllesvdK-theme
  */
 
+function naviCat() {
+	?>
+	<nav class="bs-navi bs-navi--cat">
+
+    <ul class="bs-navi__list">
+      <li class="bs-navi__item <?php if( is_singular() AND in_category('producties') OR is_category('producties') ) echo "current-menu-item"; ?>">
+        <?php
+        $category_id = get_cat_ID( 'Producties' );
+        $category_link = get_category_link( $category_id ); ?>
+
+        <a href="<?php echo esc_url( $category_link ); ?>" title="Producties">Producties</a>
+      </li>
+      <li class="bs-navi__item <?php if( is_singular() AND in_category('makers') OR is_category('makers') ) echo "current-menu-item"; ?>">
+        <?php
+        $category_id = get_cat_ID( 'Makers' );
+        $category_link = get_category_link( $category_id ); ?>
+
+        <a href="<?php echo esc_url( $category_link ); ?>" title="Makers">Makers</a>
+      </li>
+      <li class="bs-navi__item <?php if( is_singular() AND in_category('nieuws') OR is_category('nieuws') ) echo "current-menu-item"; ?>">
+        <?php
+        $category_id = get_cat_ID( 'Nieuws' );
+        $category_link = get_category_link( $category_id ); ?>
+
+        <a href="<?php echo esc_url( $category_link ); ?>" title="Nieuws">Nieuws</a>
+      </li>
+    </ul>
+  </nav>
+	<?php
+}
+
 if ( ! function_exists( 'allesvdk_theme_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -100,44 +131,6 @@ function allesvdk_theme_content_width() {
 add_action( 'after_setup_theme', 'allesvdk_theme_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function allesvdk_theme_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar 1', 'allesvdk-theme' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Voeg widgets toe.', 'allesvdk-theme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s bs-widgets__content">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title bs-heading bs-widgets__heading">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar 2', 'allesvdk-theme' ),
-		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'Voeg widgets toe.', 'allesvdk-theme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s bs-widgets__content">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title bs-heading bs-widgets__heading">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar 3', 'allesvdk-theme' ),
-		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Voeg widgets toe.', 'allesvdk-theme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s bs-widgets__content">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title bs-heading bs-widgets__heading">',
-		'after_title'   => '</h3>',
-	) );
-}
-add_action( 'widgets_init', 'allesvdk_theme_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function allesvdk_theme_scripts() {
@@ -150,11 +143,6 @@ function allesvdk_theme_scripts() {
 	wp_enqueue_script( 'uikit_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/js/uikit.min.js', array( 'jquery' ), true );
 	wp_enqueue_script( 'uikit_icons_js', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/js/uikit-icons.min.js' );
 
-	wp_enqueue_script( 'allesvdk-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	// wp_enqueue_script( 'allesvdk-theme-hylo', get_template_directory_uri() . '/js/hylo.js', array(), '20200408', true );
-
-	wp_enqueue_script( 'allesvdk-theme-hyphens', get_template_directory_uri() . '/js/hyphenator.js', array(), '20200408', true );
 
 	wp_enqueue_script( 'allesvdk-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -167,13 +155,13 @@ add_action( 'wp_enqueue_scripts', 'allesvdk_theme_scripts' );
 /**
 * Customize Read More link
 */
-function allesvdk_theme_excerpt_more( $more ) {
-	return sprintf( ' (...)<br /><a class="bs-tiles__button" href="%1$s">%2$s</a>',
-	 	get_permalink( get_the_ID() ),
-		__( 'Lees verder', 'textdomain' )
-	);
-}
-add_filter( 'excerpt_more', 'allesvdk_theme_excerpt_more' );
+// function allesvdk_theme_excerpt_more( $more ) {
+// 	return sprintf( ' (...)<br /><a class="bs-tiles__button" href="%1$s">%2$s</a>',
+// 	 	get_permalink( get_the_ID() ),
+// 		__( 'Lees verder', 'textdomain' )
+// 	);
+// }
+// add_filter( 'excerpt_more', 'allesvdk_theme_excerpt_more' );
 
 /**
 * Customize Excerpt Length
@@ -182,7 +170,6 @@ function allesvdk_theme_custom_excerpt_length( $length ) {
 	return 25;
 }
 add_filter( 'excerpt_length', 'allesvdk_theme_custom_excerpt_length', 999 );
-
 
 /**
  * Implement the Custom Header feature.
@@ -211,4 +198,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/** CUSTOM FUNCTIONS
+*/
+
 add_image_size( 'square', 300, 300, true );
+add_image_size( 'square_large', 500, 500, true );
+add_image_size( 'square_xlarge', 1000, 1000, true );
+add_image_size( 'slider', 1200, 900, true );
+
+function removeWPVersion() {
+	return '';
+}
+add_filter('the_generator', 'removeWPVersion');
+
+function allesvdk_theme_queries($query) {
+	if( !is_admin() AND is_archive() AND $query->is_main_query() ) {
+		$query->set('posts_per_page', 20);
+	}
+}
+
+add_action('pre_get_posts', 'allesvdk_theme_queries');

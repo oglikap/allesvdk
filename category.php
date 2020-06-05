@@ -19,7 +19,7 @@ get_header();
 
 			<?php get_template_part( 'template-parts/content', 'archive' );
 
-			the_posts_navigation();
+			echo paginate_links();
 
 		else :
 
@@ -32,5 +32,8 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+	if( is_category('producties') OR is_category('makers') ) {
+		get_sidebar();
+	}
+
 get_footer();

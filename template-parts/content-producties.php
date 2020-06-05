@@ -31,13 +31,7 @@
       		if ( 'post' === get_post_type() ) :
       			?>
       			<div class="entry-meta">
-      				<?php
-              // $tag_list = get_the_tag_list( '<ul class="bs-tiles__tag-list"><li class="bs-tiles__tag-item">', '</li><li class="bs-tiles__tag-item">', '</li></ul>' );
-              //
-              // if ( $tag_list && ! is_wp_error( $tag_list ) ) {
-              //   echo $tag_list;
-              the_field('maker');
-              // } 	?>
+      				<?php the_field('maker');	?>
       			</div><!-- .entry-meta -->
       		<?php endif; ?>
       	</header><!-- .entry-header -->
@@ -64,8 +58,8 @@
       		?>
       	</div><!-- .entry-content -->
 
-      	<footer class="entry-footer">
-
+      	<footer class="entry-footer bs-tiles__footer">
+          <?php the_tags( '<ul class="bs-tiles__footer-list"><li>', '</li><li>', '</li></ul>' ); ?>
       	</footer><!-- .entry-footer -->
 
       </div>
