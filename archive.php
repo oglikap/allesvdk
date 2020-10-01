@@ -15,10 +15,7 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php get_template_part( 'template-parts/pages/content', 'header' ); ?>
-
-
-			<?php
+			<?php get_template_part( 'template-parts/pages/content', 'header' );
 
 				get_template_part( 'template-parts/content', 'archive' );
 
